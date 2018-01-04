@@ -1,7 +1,7 @@
 {
     "jpsVersion": "0.99",
     "jpsType": "update",
-    "build": "201712291307",
+    "build": "201801041755",
     "id": "letsencrypt-ssl-addon",
     "name": "Let's Encrypt Free SSL",
     "categories": [
@@ -60,9 +60,9 @@
     "onBeforeDelete": "delete",
     "actions": {
         "install": {
-            "script": "https://raw.githubusercontent.com/jelastic-jps/lets-encrypt/master/scripts/create-installation-script.js?_r=${fn.random}",
+            "script": "https://raw.githubusercontent.com/jelastic-jps/lets-encrypt/multiple-ip-bug/scripts/create-installation-script.js?_r=${fn.random}",
             "params": {
-                "baseDir": "https://raw.githubusercontent.com/jelastic-jps/lets-encrypt/master/scripts",
+                "baseDir": "https://raw.githubusercontent.com/jelastic-jps/lets-encrypt/multiple-ip-bug/scripts",
                 "cronTime": "0 ${fn.random(1,6)} * * *",
                 "customDomain": "${this.customDomain}"
             }
