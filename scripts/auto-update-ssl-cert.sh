@@ -19,7 +19,7 @@ seconds_before_expire=$(( $DAYS_BEFORE_EXPIRE * 24 * 60 * 60 ));
 WGET=$(which wget);
 GIT=$(which git);
 BASE_REPO_URL="https://github.com/jelastic-jps/lets-encrypt"
-RAW_REPO_SCRIPS_URL="https://raw.githubusercontent.com/jelastic-jps/lets-encrypt/master/scripts/"
+RAW_REPO_SCRIPS_URL="https://raw.githubusercontent.com/jelastic-jps/lets-encrypt/multiple-ip-bug/scripts/"
 
 
 function validateLatestVersion(){
@@ -37,6 +37,7 @@ function validateLatestVersion(){
             mv /tmp/generate-ssl-cert.sh /root/generate-ssl-cert.sh
             mv /tmp/validation.sh /root/validation.sh
             chmod +x /root/*.sh
+            echo $latest_revision > $revision_state_path
         }
    }
 }
